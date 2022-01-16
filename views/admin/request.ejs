@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../public/css/main.css">
+	<link rel="stylesheet" href="../../public/css/product.css">
+</head>
+<body>
+	<header>
+		<nav id="main-nav">
+			<div class="container">
+					<img src="http://www.mom.gov.et/wp-content/uploads/2021/10/momlogo.jpg" alt="NewsGrid" class="logo">
+					<div class="social">
+						<a href="http://facebook.com" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+						<a href="http://twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+						<a href="http://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+						<a href="http://youtube.com" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+					</div>
+					<ul>
+						<li><a class="current" href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+					</ul>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<main>
+			<div class="main-container">
+				<div class="cards">					
+					<% if (req.length > 0) { %>
+						<p class="title">List of request</p>
+						<% for (let request of req) { %>
+						<ul class="card-list">
+								<li class="card-list-name"><%= request.first_name %> <%= request.sir_name %></li>
+								<li class="card-list-mineralName">Mineral: <%= request.mineral_name %></li>
+								<li class="card-list-amount">Amount: <%= request.amount %></li>
+								<li class="card-list-price">Price: <%= request.price %></li>
+								<li class="card-list-description">description: <%= request.description  %></li>
+								<div class="card__actions">
+									<a href="/request/<%= request.id %>" class="btn">Response</a>
+								</div>
+						</ul>
+						<% } %>
+					<% } else { %>
+						<p>No new request</p>
+					<% } %>
+				</div>
+			</div>
+		</main>
+	</main>
+</body>
+</html>
+
+

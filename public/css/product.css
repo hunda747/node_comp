@@ -1,0 +1,53 @@
+.main-form {
+  max-width: 1000px;
+  padding: 1rem;
+  margin: auto;
+  /* display: block; */
+}
+
+.half {
+  width: 50%;
+  float: left;
+  padding: 0 5px 0 0;
+}
+
+.main-container {
+	background-color: #bcdee7;
+}
+
+.main-container .title{
+	margin: 0;
+	padding: 1rem;
+}
+
+.main-container .cards{
+	max-width: 900px;
+	margin: auto;
+}
+
+.main-container .card-list {
+	background-color: rgb(59, 83, 219);
+  margin: 0rem 1rem 1rem 1rem;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	padding: 1rem 1rem 0 1rem;
+}
+
+.main-container .card-list:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.main-container .card-list li{
+  list-style: none;
+}
+
+.main-container .card-list .card-list-name {
+	font-size: 28px;
+	font-weight: bold;
+	color: white;
+}
+
+
+/* .main-container .card-list .card-list-mineralName
+.main-container .card-list .card-list-amount
+.main-container .card-list .card-list-price
+.main-container .card-list .card-list-description */
