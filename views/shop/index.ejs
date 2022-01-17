@@ -1,37 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../../public/css/main.css">
-    <link rel="stylesheet" href="../../public/css/product.css">
+<%- include('../includes/user-head.ejs') %>
 </head>
 <body>
-    <header >
-        <nav id="main-nav">
-            <div class="container">
-              <a href="/"><img src="http://www.mom.gov.et/wp-content/uploads/2021/10/momlogo.jpg" alt="NewsGrid" class="logo"></a>
-              <div class="social">
-                <a href="http://facebook.com" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
-                <a href="http://twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
-                <a href="http://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
-                <a href="http://youtube.com" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
-              </div>
-              <ul>
-                <li><a class="current" href="/">Home</a></li>
-                <li><a href="/import_page">Import</a></li>
-                <li><a href="/export_page">Export</a></li>
-              </ul>
-            </div>
-        </nav>
-    </header>
+    <%- include('../includes/user-navigation.ejs') %>
 	 <main>
         <div class="showcase">
             <img src="../../public/photo/download.jpg" alt="">
         </div>
-        <div class="panel">
+        <div class="panelsdd">
             <h4 class="top">Welcome to Ethiopian mining</h4>
             <p class="description">The goal of the Mining website is to provide an electronic platform for user to make a request to import or export minerals.</p>
             <h4>Registration for importing and exporting minerals </h4>

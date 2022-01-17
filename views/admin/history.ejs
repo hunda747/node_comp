@@ -16,12 +16,12 @@
 								<li class="card-list-price">Price: <%= request.price %></li>
 								<li class="card-list-description">description: <%= request.description  %></li>
 								<div class="card__actions">
-									<a href="/request/<%= request.id %>" class="btn">Response</a>
+									<a href="/history/<%= request.id %>" class="btn" >More</a>
 								</div>
 						</ul>
 						<% } %>
 					<% } else { %>
-						<p>No new request</p>
+						<p>No request found</p>
 					<% } %>
 				</div>
 			</div>

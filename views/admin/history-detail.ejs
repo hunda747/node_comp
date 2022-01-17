@@ -9,7 +9,6 @@
 		<div class="request-data">
 			<ul class="request-data-items">
 				<li>Name: <span><%= request.first_name %> <%= request.sir_name %></span></li>
-				<li><%= request.req_type%></li>
 				<li>Email: <span><%= request.email %></span></li>
 				<li>Mineral: <span><%= request.mineral_name %></span></li>
 				<li>Amount: <span><%= request.amount %></span></li>
@@ -22,9 +21,7 @@
 				<textarea name="response" id="response" rows="15"></textarea>
 				<input type="hidden" name="email_adress" value="<%= request.email%>">
 				<input type="hidden" name="id" value="<%= request.id%>">
-				<button class="btn">
-					Send
-				</button>
+				
 			</form>
 		</div>
 		<hr>
