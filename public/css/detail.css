@@ -1,0 +1,28 @@
+li {
+ 	list-style: none;
+}
+
+.containers {
+ 	padding: 1rem 1rem;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	margin: 2rem;
+}
+
+.containers .request-data-items {
+	margin: 5px;
+	font-weight: bold;
+
+}
+
+.containers .request-data-items span{
+	font-weight: normal;
+}
+
+.containers .email-response{
+	padding: 0 2.3rem;
+}
+
+.containers .email-response #response{
+	width: 100%;
+	padding: 10px;
+}

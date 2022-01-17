@@ -13,12 +13,26 @@ exports.getUser = async(req, res, next) => {
   console.log(password);
 
   if(userName==='root@gmail.com' && password==='root'){
-    const request =await Request.fetchAll();
+    const request =await Request.fetchNew();
     console.log(request[0]);
     res.render('admin/request', {req: request[0]});
   }else{
     res.redirect('/login')
   }
+}
+
+exports.getRequest = async(req, res, next) => {
+  const request =await Request.fetchNew();
+  const sta = (request[0].status === 'import')? 'false' : 'true';
+  console.log('status' + sta);
+  res.render('admin/request', 
+            {req: request[0],
+             status: request[0].status});
+}
+
+exports.getHistory = async(req, res, next) => {
+  const request =await Request.fetchAll();
+  res.render('admin/history', {req: request[0]});
 }
 
 exports.getProduct = (req, res, next) => {
@@ -33,11 +47,26 @@ exports.getProduct = (req, res, next) => {
   .catch(err => console.log(err));
 }
 
+exports.getHistoryDetail = (req, res, next) => {
+  const reqId = req.params.requestId;
+
+  Request.findById(reqId)
+  .then(([row, fieldData]) => {
+    res.render('admin/history-detail', {
+      request: row[0]
+    });
+  })
+  .catch(err => console.log(err));
+}
+
 exports.getEmail = async (req, res, next) => {
   let email = req.body.email_adress;
+  const id = req.body.id;
+  const message = req.body.response;
   console.log(email);
-  email = 'hundaolnk@gmail.com'
-
+  email = 'hundaolnk@gmail.com';
+  Request.changeStatus(message, id);
+  
   let testAccount = await nodemailer.createTestAccount();
 
   // create reusable transporter object using the default SMTP transport
@@ -67,5 +96,6 @@ exports.getEmail = async (req, res, next) => {
   // Preview only available when sending through an Ethereal account
   console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
   // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-  res.redirect('/request/1');
+  const request =await Request.fetchNew();
+  res.render('admin/request', {req: request[0]});
 }

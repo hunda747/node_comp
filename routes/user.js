@@ -15,6 +15,9 @@ router.get('/export_page', userController.getExportPage);
 // register form
 router.get('/import_page', userController.getImportPage);
 
+// register form
+router.get('/login', userController.getLogin);
+
 
 // form register
 router.post('/register', userController.addRequest);

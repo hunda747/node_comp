@@ -10,7 +10,11 @@ router.get('/login', adminController.getLogin);
 
 router.post('/adminLogin', adminController.getUser);
 
+router.post('/requests', adminController.getRequest)
+router.post('/history', adminController.getHistory)
+
 router.get('/request/:requestId', adminController.getProduct);
+router.get('/history/:requestId', adminController.getHistoryDetail);
 
 router.post('/request-detail', adminController.getEmail);
 

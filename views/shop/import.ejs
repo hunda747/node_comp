@@ -1,84 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../../public/css/main.css">
-    <link rel="stylesheet" href="../../public/css/product.css">
-		  <link rel="stylesheet" href="../../public/css/forms.css">
+<%- include('../includes/user-head.ejs') %>
+<link rel="stylesheet" href="../../public/css/forms.css">
 </head>
 <body>
-	<header>
-		<nav id="main-nav">
-			<div class="container">
-				<a href="/"><img src="http://www.mom.gov.et/wp-content/uploads/2021/10/momlogo.jpg" alt="NewsGrid" class="logo"></a>
-				<div class="social">
-					<a href="http://facebook.com" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
-					<a href="http://twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
-					<a href="http://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
-					<a href="http://youtube.com" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
-				</div>
-					<ul>
-						<li><a href="/">Home</a></li>
-						<li><a class="current" href="/import_page">Import</a></li>
-						<li><a href="/export_page">Export</a></li>
-					</ul>
-			</div>
-		</nav>
-	</header>
+    <%- include('../includes/user-navigation.ejs') %>
 	<main class="main-form">
 		<h3>Please fill out the form import</h3>
 			<form class="product-form" action="/register" method="POST">
-				<!-- sirname -->
-				<div class="form-control">
-					<label for="name">Sir Name</label>
-					<input type="text" name="sirName" id="sirName" required>
-				</div>
-				<!-- first name -->
-				<div class="form-control">
-					<label for="name">First Name</label>
-					<input type="text" name="name" id="name" required>
-				</div>
-				<!-- email -->
-				<div class="form-control">
-					<label for="name">Email</label>
-					<input type="email" name="email" id="email" required>
-				</div>
-				<!-- phone number -->
-				<div class="form-control">
-					<label for="name">Phone number</label>
-					<input type="text" name="phoneNumber" id="phoneNumber" required>
-				</div>
-				<!-- mineral name -->
-				<div class="form-control">
-					<label for="mineral-name">Mineral Name</label>
-					<input type="text" name="mineralName" id="mineralName" required>
-				</div>
-				<!-- amount -->
-				<div class="form-control half" >
-					<label for="amount">Amount</label>
-					<input type="number" name="amount" id="amount" step="0.01" required>
-				</div>
-				<!-- price -->
-				<div class="form-control half">
-					<label for="price">Price</label>
-					<input type="number" name="price" id="price" step="0.01" required>
-				</div>
-				<!-- exported country -->
-				<div class="form-control">
-					<label for="name">Import country</label>
-					<input type="text" name="country" id="country" required>
-				</div>
-				<!-- description -->
-				<div class="form-control">
-					<label for="description">Description</label>
-					<textarea name="description" id="description" rows="5" required></textarea>
-				</div>
-				<button class="btn" type="submit">
-						Add
-				</button>
+				<%- include('../includes/user-form.ejs') %>
 				<input type="hidden" name="type" value="import">
 			</form>
 	</main>
