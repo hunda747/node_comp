@@ -14,6 +14,11 @@
 .main-container {
 }
 
+.showcasess img{
+  height: 100vh;
+  width: 100%;
+}
+
 .main-container .title {
   margin: 0;
   padding: 1rem;
