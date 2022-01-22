@@ -1,31 +1,60 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <%- include('../includes/admin-head.ejs') %>
 </head>
 <body>
 	<%- include('../includes/admin-navigation.ejs') %>
 	<main>
-		<main>
-			<div class="main-container">
-				<div class="cards">					
-					<% if (req.length > 0) { %>
-						<p class="title">List of request</p>
-						<% for (let request of req) { %>
-						<ul class="card-list">
-								<li class="card-list-name"><%= request.first_name %> <%= request.sir_name %></li>
-								<li class="card-list-mineralName">Mineral: <%= request.mineral_name %></li>
-								<li class="card-list-amount">Amount: <%= request.amount %></li>
-								<li class="card-list-price">Price: <%= request.price %></li>
-								<li class="card-list-description">description: <%= request.description  %></li>
-								<div class="card__actions">
-									<a href="/history/<%= request.id %>" class="btn" >More</a>
-								</div>
-						</ul>
-						<% } %>
-					<% } else { %>
-						<p>No request found</p>
-					<% } %>
+		<div class="container">					
+			<% if (req.length > 0) { %>
+				<nav class="navbar navbar-light bg-light justify-content-between">
+					<a class="navbar-brand">List of request</a>
+					<form class="form-inline">
+						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+					</form>
+				</nav>
+				<!-- <p class="title"></p> -->
+				<div class="container">
+					<table class="table table-hover">
+						<thead>
+							<tr class="table_col">
+								<th scope="col">Name</th>
+								<th scope="col">Mineral name</th>
+								<th scope="col">Amount</th>
+								<th scope="col">Price</th>
+								<th scope="col"></th>
+							</tr>
+						</thead>
+						<tbody>
+								<% for (let request of req) { %>
+								<tr class="table_row"> 
+									<td><%= request.first_name %> <%= request.sir_name %></td>
+									<td><%= request.mineral_name %></td>
+									<td><%= request.amount %></td>
+									<td><%= request.price %></td>
+									<td><a href="/history/<%= request.id %>" class="btn btn-primary">More</a></td>
+								</tr>
+								<% } %>
+						</tbody>
+					</table>
 				</div>
-			</div>
-		</main>
+				<!-- <% for (let request of req) { %>
+				<ul class="card-list">
+					
+					<li class="card-list-name"><%= request.first_name %> <%= request.sir_name %></li>
+					<li class="card-list-mineralName">Mineral: <%= request.mineral_name %></li>
+					<li class="card-list-amount">Amount: <%= request.amount %></li>
+					<li class="card-list-price">Price: <%= request.price %></li>
+					<li class="card-list-description">description: <%= request.description  %></li>
+					<div class="card__actions">
+						<a href="/history/<%= request.id %>" class="btn" >More</a>
+					</div>
+				</ul>
+				<% } %> -->
+			<% } else { %>
+				<p>No request found</p>
+			<% } %>			
+		</div>
 	</main>
 </body>
 </html>

@@ -14,6 +14,11 @@
 .main-container {
 }
 
+.showcasess img{
+  height: 100vh;
+  width: 100%;
+}
+
 .main-container .title {
   margin: 0;
   padding: 1rem;
@@ -51,6 +56,11 @@
   font-weight: bold;
   color: white;
 }
+
+.main-nav_admin{
+  border-bottom: 1px solid black;
+}
+
 
 /* .main-container .card-list .card-list-mineralName
 .main-container .card-list .card-list-amount

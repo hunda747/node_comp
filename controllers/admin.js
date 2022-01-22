@@ -40,7 +40,7 @@ exports.getProduct = (req, res, next) => {
 
   Request.findById(reqId)
   .then(([row, fieldData]) => {
-    res.render('admin/request-detail', {
+    res.render('admin/request_detail', {
       request: row[0]
     });
   })

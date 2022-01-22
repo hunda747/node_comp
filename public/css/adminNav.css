@@ -1,0 +1,33 @@
+.main-nav .container{
+ color: blue;
+}
+
+.main-nav .container {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: space-between;
+}
+
+.main-nav .container .logos img{
+ width: 110px;
+}
+
+.main-nav .container .buttons{
+ padding: 1.5rem;
+}
+
+.main-nav .container .buttons ul{
+ list-style: none;
+}
+
+.main-nav .container .buttons ul li{
+ align-items: center;
+ padding: 0 0.6rem;
+ display: inline;
+ float: left;
+}
+
+.bottom-footer{
+ background-color: #FFD700;
+}
