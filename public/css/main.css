@@ -25,6 +25,10 @@ form {
 }
 
 /* Navigation */
+.main_admin{
+  border-bottom: 1px solid black;
+}
+
 #main-nav {
   background: #fff;
   position: sticky;
@@ -32,7 +36,6 @@ form {
   margin: auto;
   top: 0;
   z-index: 2;
-  border-bottom: 1px solid black;
 }
 
 #main-nav .container {

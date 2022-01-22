@@ -57,6 +57,11 @@
   color: white;
 }
 
+.main-nav_admin{
+  border-bottom: 1px solid black;
+}
+
+
 /* .main-container .card-list .card-list-mineralName
 .main-container .card-list .card-list-amount
 .main-container .card-list .card-list-price

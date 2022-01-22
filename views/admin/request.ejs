@@ -1,45 +1,65 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="../../public/css/adminNav.css
+">
 <%- include('../includes/admin-head.ejs') %>
 
 </head>
 <body>
 	<%- include('../includes/admin-navigation.ejs') %>
 	<main>
-		<main>
-			<div class="main-container">
-				<div class="cards">					
-					<% if (req.length > 0) { %>
-						<p class="title">List of request</p>
-						<% for (let request of req) { %>
-						<!-- <ul class="card-list">
-								<li class="card-list-name"><%= request.first_name %> <%= request.sir_name %></li>
-								<li class="card-list-mineralName">Mineral: <%= request.mineral_name %></li>
-								<li class="card-list-amount">Amount: <%= request.amount %></li>
-								<li class="card-list-price">Price: <%= request.price %></li>
-								<li class="card-list-description">description: <%= request.description  %></li>
-								<div class="card__actions">
-									<a href="/request/<%= request.id %>" class="btn">Response</a>
-								</div>
-						</ul> -->
-						<div class="card">
-							<div class="card-header">
-								<%= request.req_type%>
+		<div class="main-container">
+			<div class="cards">					
+				<% if (req.length > 0) { %>
+					<p class="title">List of request</p>
+					<% for (let request of req) { %>
+					<!-- <ul class="card-list">
+							<li class="card-list-name"><%= request.first_name %> <%= request.sir_name %></li>
+							<li class="card-list-mineralName">Mineral: <%= request.mineral_name %></li>
+							<li class="card-list-amount">Amount: <%= request.amount %></li>
+							<li class="card-list-price">Price: <%= request.price %></li>
+							<li class="card-list-description">description: <%= request.description  %></li>
+							<div class="card__actions">
+								<a href="/request/<%= request.id %>" class="btn">Response</a>
 							</div>
-							<div class="card-body">
-								<h5 class="card-title"><%= request.first_name %> <%= request.sir_name %></h5>
-								<h3 class="card-text"><%= request.mineral_name %></h3>
-								<p class="card-text"><%= request.description  %></p>
-								<a href="/request/<%= request.id %>" class="btn btn-primary">RESPONDE</a>
-							</div>
+					</ul> -->
+					<div class="card">
+						<div class="card-header">
+							<%= request.req_type%>
 						</div>
-						<% } %>
-					<% } else { %>
-						<p>No new request</p>
+						<div class="card-body">
+							<h5 class="card-title"><%= request.first_name %> <%= request.sir_name %></h5>
+							<h3 class="card-text"><%= request.mineral_name %></h3>
+							<p class="card-text"><%= request.description  %></p>
+							<a href="/request/<%= request.id %>" class="btn btn-primary">RESPONDE</a>
+						</div>
+					</div>
 					<% } %>
-				</div>
+				<% } else { %>
+					<p>No new request</p>
+				<% } %>
 			</div>
-		</main>
+		</div>
 	</main>
+	<footer>
+		<div class="bottom-footer">
+				<div class="container">
+						<div class="row">
+								<div class="col bottom-meta">
+										<div class="bottom-copyright">
+												Copyright © 2020 All Right Reserved. The Ministry of Mines and Petroleum (MoMP).<br>    
+										</div>
+										<a></a>
+								</div>
+								<div class="col">
+										
+								</div>
+								<div class="col bottom-social">
+										Designed By <a href="https://cornerstone-technology.com">Cornerstone Technology</a>            
+								</div>
+						</div>
+				</div>
+		</div>
+</footer>
 </body>
 </html>
 

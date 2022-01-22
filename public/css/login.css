@@ -1,10 +1,10 @@
 body {
 	font-family: "Open Sans", sans-serif;
 	height: 100vh;
-	background: rgb(14, 10, 63) 50% fixed;
+	background: #FFD700 50% fixed;
 	background-size: cover;
 }
-
+/* rgb(14, 10, 63) */
 @keyframes spinner {
 	0% {
 			transform: rotateZ(0deg);
