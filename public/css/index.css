@@ -2,9 +2,30 @@
   box-sizing: border-box;
 }
 
-.rowss {
- /* margin: 5px; */
+.info {
  background-color: whitesmoke;
+ padding: 2rem;
+ text-align: center;
+}
+.info .orange {
+ padding: 1rem;
+ background-color: #f8b029e6;
+}
+.info .orange .btn{
+ border: 1px solid black;
+ border-radius: 5px;
+}
+.info .orange .btn:hover{
+ background-color: rgb(73, 43, 5);
+ color: white;
+}
+
+.rowss .differ{
+ margin: 1rem 0;
+ padding: 10px;
+ background-color: whitesmoke;
+ border: 2px solid #f8b029e6;
+ border-radius: 15px;
 }
 
 .row .col h2{

@@ -32,16 +32,17 @@ form {
 #main-nav {
   background: #fff;
   position: sticky;
-  max-width: 1200px;
-  margin: auto;
+  /* max-width: 1200px; */
+  /* margin: auto; */
   top: 0;
   z-index: 2;
 }
 
-#main-nav .container {
-  display: grid;
-  grid-template-columns: 6fr 3fr 2fr;
-  padding: 0rem 2rem;
+#main-nav .containers {
+  display: flex;
+  justify-content: space-between;
+  /* grid-template-columns: 6fr 3fr 2fr; */
+  padding: 0rem 5rem;
   align-items: center;
   height: 8.5rem;
 }
@@ -53,8 +54,25 @@ form {
 
 #main-nav ul {
   list-style: none;
-  justify-self: end;
   display: flex;
+  /* justify-self: end; */
+  justify-content: space-between;
+}
+
+#main-nav ul li {
+  /* background-color: #f8b029e6; */
+  margin: 0px;
+  text-align: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+#main-nav .current {
+  border-bottom: 1px solid #f8b029e6;
+}
+
+#main-nav ul li a:hover {
+  border-bottom: 1px solid #f8b029e6;
 }
 
 #main-nav ul li a {
@@ -63,7 +81,7 @@ form {
   padding: 0.75rem;
   font-weight: bold;
 }
-
+/* 
 #main-nav ul li a.current {
   background: #c72727;
   color: #fff;
@@ -72,7 +90,7 @@ form {
 #main-nav ul li a:hover {
   background: #f3f3f3;
   color: #333;
-}
+} */
 
 #main-nav .social {
   justify-self: center;
@@ -254,10 +272,10 @@ form {
   align-items: stretch;
 }
 
-.card {
+/* .card {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-}
-
+} */
+/* 
 .card__header,
 .card__content {
   padding: 1rem;
@@ -304,7 +322,7 @@ form {
 .btn:active {
   background-color: #00695c;
   color: white;
-}
+} */
 
 @media (min-width: 768px) {
   .main-header__nav {

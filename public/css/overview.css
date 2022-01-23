@@ -1,0 +1,122 @@
+.full{
+ background-color: whitesmoke;
+}
+
+.top{
+ background-image: url('../photo/yellow-g1d5fee7d4_1920.jpg') ;
+ padding: 6rem;
+ color: black;
+}
+
+.top h1{
+ text-align: center;
+}
+
+.info{
+ margin: 1rem 3rem;
+ padding: 1rem;
+ background-color: white;
+}
+
+.info h3{
+ padding: 1rem;
+ text-align: center;
+}
+
+.info p{
+ text-align: justify;
+}
+
+.displays{
+ display: flex;
+ justify-content: center;
+}
+
+.displays .card {
+ margin: 1rem;
+}
+
+.displays .card .card-body h5{
+ font-weight: bold;
+}
+
+.displays .card .card-body p{
+ text-align: justify;
+}
+
+.bottom-footer{
+ background-color: #f8b029e6;
+ padding: 1rem;
+}
+
+.choice{
+ height: 72vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border-top: 1px solid black;
+}
+
+.choice .view{
+ padding: 5rem;
+ background-color: #f8b029e6;
+ margin: 1rem;
+ /* height: 20px; */
+ text-align: center;
+ align-items: center;
+}
+
+.choice .view .btn{
+ color: #f3f3f3;
+}
+
+.contact{
+ display: flex;
+ justify-content: center;
+}
+
+.contact .cons{
+
+	padding: 2rem;
+}
+
+.contact .forms{
+	width: 600px;
+}
+
+.contact .forms p{
+	text-align: justify;
+}
+
+.contact .forms input{
+	width: 100%;
+	margin: 8px;
+}
+
+.contact .forms textarea{
+	width: 100%;
+	margin: 8px;
+}
+
+.contact .forms .btn{
+	background-color:darksalmon;
+	padding: 0.7rem;
+	border-radius: 5px;
+	align-items: center;
+	margin: 0 5rem;
+}
+
+.contact .mess{
+	width: 500px;
+}
+
+.contact .mess h2{
+	margin: 0.7rem 1rem;
+}
+
+#map {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+}

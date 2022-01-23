@@ -1,5 +1,6 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <%- include('../includes/admin-head.ejs') %>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="../../public/css/adminNav.css">
 	<link rel="stylesheet" href="../../public/css/detail.css">
 </head>
 
@@ -7,43 +8,54 @@
 	<%- include('../includes/admin-navigation.ejs') %>
 	
 	<main class="containers">
-		<div class="request-datahu">
+		<div class="request-datail">
    		<div class="card">
     		<div class="card-header">
     		  <%= request.req_type%>
     		</div>
-    		<div class="card-body">
-    		  <h5 class="card-title"></h5>
+				<p class="name">
+					<%= request.first_name %> <%= request.sir_name %>
+				</p>
+				
+    		<div class="card-body"> 
     		  <div class="card">
 						<div class="card-header">
 							Address
 						</div>
 						<div class="card-body">
 							<p class="card-text"><%= request.email %></p>
-							<p class="card-text">+251968547156</p>
+							<p class="card-text"><%= request.phone_number%></p>
 						</div>
 					</div>
-					<div class="card">
+					<div class="card half" >
 						<div class="card-header">
-							Mineral
+							Mineral Type
+						</div>
+						<div class="card-body">
+							<p class="card-text"><%= request.mineral_type %></p>
+						</div>
+					</div>
+					<div class="card half" >
+						<div class="card-header">
+							Mineral Name
 						</div>
 						<div class="card-body">
 							<p class="card-text"><%= request.mineral_name %></p>
 						</div>
 					</div>
-					<div class="card">
+					<div class="card half">
 						<div class="card-header">Amount</div>
 						<div class="card-body">
 							<p class="card-text"><%= request.amount %></p>
 						</div>
 					</div>
-					<div class="card">
+					<div class="card half">
 						<div class="card-header">Price</div>
 						<div class="card-body">
 							<p class="card-text"><%= request.price %></p>
 						</div>
 					</div>
-					<div class="card">
+					<div class="card des">
 						<div class="card-header">description</div>
 						<div class="card-body">
 							<p class="card-text"><%= request.description%></p>
@@ -53,7 +65,7 @@
 						<div class="card-header">Response</div>
 						<div class="card-body">
 							<form action="/request-detail" method="post">
-								<textarea name="response" id="response" rows="15">
+								<textarea name="response" id="response" rows="10">
 								</textarea>
 								<input type="hidden" name="email_adress" value="<%= request.email%>">
 								<input type="hidden" name="id" value="<%= request.id%>">
@@ -68,7 +80,7 @@
 		</div>
 		<hr>
 	</main>
-
+	<%- include('../includes/user-footer.ejs') %>
 </body>
 </html>
 

@@ -1,15 +1,16 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="../../public/css/adminNav.css">
 <%- include('../includes/admin-head.ejs') %>
 </head>
 <body>
 	<%- include('../includes/admin-navigation.ejs') %>
-	<main>
-		<div class="container">					
+	<main class="containers">
+		<div class="containe">
 			<% if (req.length > 0) { %>
 				<nav class="navbar navbar-light bg-light justify-content-between">
 					<a class="navbar-brand">List of request</a>
-					<form class="form-inline">
-						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+					<form class="form-inline" method="post" action="/search">
+						<input class="form-control mr-sm-2" type="search" placeholder="Search" name="search" id="search" aria-label="Search">
 						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 					</form>
 				</nav>
@@ -18,7 +19,11 @@
 					<table class="table table-hover">
 						<thead>
 							<tr class="table_col">
+								<th scope="col">Date</th>
+								<th scope="col">License Number</th>
 								<th scope="col">Name</th>
+								<!-- <th scope="col">email</th> -->
+								<th scope="col">Mineral type</th>
 								<th scope="col">Mineral name</th>
 								<th scope="col">Amount</th>
 								<th scope="col">Price</th>
@@ -27,8 +32,12 @@
 						</thead>
 						<tbody>
 								<% for (let request of req) { %>
-								<tr class="table_row"> 
+									<tr class="table_row"> 
+									<td><%= request.date %></td>
+									<td><%= request.license_number %></td>
 									<td><%= request.first_name %> <%= request.sir_name %></td>
+									<!-- <td><%= request.email %></td> -->
+									<td><%= request.mineral_type %></td>
 									<td><%= request.mineral_name %></td>
 									<td><%= request.amount %></td>
 									<td><%= request.price %></td>
@@ -52,10 +61,47 @@
 				</ul>
 				<% } %> -->
 			<% } else { %>
-				<p>No request found</p>
+				<nav class="navbar navbar-light bg-light justify-content-between">
+					<a class="navbar-brand">List of request</a>
+					<form class="form-inline" method="post" action="/search">
+						<input class="form-control mr-sm-2" type="search" placeholder="Search" name="search" id="search" aria-label="Search">
+						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+					</form>
+				</nav>
+				<div class="container">
+					<table class="table table-hover">
+						<thead>
+							<tr class="table_col">
+								<th scope="col">Name</th>
+								<th scope="col">Mineral name</th>
+								<th scope="col">Amount</th>
+								<th scope="col">Price</th>
+								<th scope="col"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><p>No request found</p></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			<% } %>			
 		</div>
+		
+			<!-- <div class="card side" style="width: 18rem;">
+				<div class="card-header">
+					Featured
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">Table</li>
+					<li class="list-group-item"><a href="/report">Pie chart</a></li>
+					<li class="list-group-item">Vestibulum at eros</li>
+				</ul>
+			</div> -->
+			
 	</main>
+	<%- include('../includes/user-footer.ejs') %>
 </body>
 </html>
 

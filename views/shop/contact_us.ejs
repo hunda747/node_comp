@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="../../public/css/overview.css">
+<script src="../../public/js/index.js"></script>
+<%- include('../includes/user-head.ejs') %>
+</head>
+<body>
+  <%- include('../includes/user-navigation.ejs') %>
+  <main class="choice">
+		<div class="contact">
+			<div class="mess cons">
+				<h2>Contact us</h2>
+				
+				<!--The div element for the map -->
+				<div id="map"></div>
+
+				<!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+				<script
+					src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"
+					async
+				></script>
+			</div>
+			<div class="forms cons">
+				<p>Get in touch with the MoMP’s Federal Office through any of the following avenues. The point of contact for email or telephone inquiries is
+				</p>
+
+				<input type="text" name="name" id="name" placeholder="Name" required>
+				<input type="email" name="email" id="email" placeholder="email" required>
+				<textarea name="message" id="" cols="30" rows="10" required>
+
+				</textarea>
+				<button class="btn" type="submit">Send</button>
+			</div>
+		</div>
+  </main>
+	<%- include('../includes/user-footer.ejs') %>
+</body>

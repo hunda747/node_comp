@@ -1,15 +1,26 @@
 <%- include('../includes/user-head.ejs') %>
 	<link rel="stylesheet" href="../../public/css/forms.css">
+	<link rel="stylesheet" href="../../public/css/overview.css">
 </head>
 <body>
     <%- include('../includes/user-navigation.ejs') %>
-	<main class="main-form">
-		<h3>Please fill out the form export</h3>
-		<form class="product-form" action="/register" method="POST">
-			<%- include('../includes/user-form.ejs') %>
-			<input type="hidden" name="type" value="export">
-		</form>
+	<main style="border-top: 1px solid black;">
+		<div class="main-form">
+			<h3>Please fill out the form export</h3>
+			<form class="product-form" action="/register" method="POST">
+				<%- include('../includes/user-form.ejs') %>
+				<div class="form-control">
+					<label for="name">Export country</label>
+					<input type="text" name="country" id="country" required>
+				</div>
+				<button class="btn" type="submit">
+					Add
+				</button>
+				<input type="hidden" name="type" value="export">
+			</form>
+		</div>
 	</main>
+	<%- include('../includes/user-footer.ejs')%>
 </body>
 </html>
 
