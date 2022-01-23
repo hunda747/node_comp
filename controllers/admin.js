@@ -30,8 +30,30 @@ exports.getRequest = async(req, res, next) => {
              status: request[0].status});
 }
 
+exports.getReport = async(req, res, next) => {
+  const [request, metaData] =await Request.fetchType();
+  let values=[];
+  for (let req of request){
+    values.push(req.val); 
+  }
+  //  console.log(request);
+  //  console.log(values);
+  res.render('admin/report', {req: request, type: values});
+}
+
+// history
 exports.getHistory = async(req, res, next) => {
   const request =await Request.fetchAll();
+  res.render('admin/history', {req: request[0]});
+}
+
+exports.getSearchResult = async(req, res, next) => {
+  const name = req.body.search;
+  if(name === ''){
+    const request =await Request.fetchAll();
+    res.render('admin/history', {req: request[0]});
+  }
+  const request =await Request.fetchSearchLicense(name);
   res.render('admin/history', {req: request[0]});
 }
 

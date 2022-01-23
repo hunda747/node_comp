@@ -15,6 +15,18 @@ router.get('/export_page', userController.getExportPage);
 // register form
 router.get('/import_page', userController.getImportPage);
 
+router.get('/overview', userController.getOverview);
+
+router.get('/register', userController.getRegister);
+
+router.get('/contact_us', userController.getContact);
+
+router.get('/regulation', userController.getRegulation);
+
+router.get('/mining_licensing', userController.getMining_licensing);
+
+router.get('/gemstones', userController.getGemstones);
+
 // register form
 router.get('/login', userController.getLogin);
 

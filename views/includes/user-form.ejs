@@ -1,10 +1,10 @@
 <!-- sirname -->
-<div class="form-control">
+<div class="form-control half">
  <label for="name">Sir Name</label>
  <input type="text" name="sirName" id="sirName" required>
 </div>
 <!-- first name -->
-<div class="form-control">
+<div class="form-control half">
  <label for="name">First Name</label>
  <input type="text" name="name" id="name" required>
 </div>
@@ -14,12 +14,20 @@
  <input type="email" name="email" id="email" required>
 </div>
 <!-- phone number -->
-<div class="form-control">
+<div class="form-control half">
+ <label for="name">License Number</label>
+ <input type="text" name="license_number" id="license_number" required>
+</div>
+<div class="form-control half">
  <label for="name">Phone number</label>
  <input type="text" name="phoneNumber" id="phoneNumber" required>
 </div>
 <!-- mineral name -->
-<div class="form-control">
+<div class="form-control half">
+  <label for="mineral-name">Mineral Type</label>
+  <input type="text" name="mineralType" id="mineralType" required>
+ </div>
+<div class="form-control half">
  <label for="mineral-name">Mineral Name</label>
  <input type="text" name="mineralName" id="mineralName" required>
 </div>
@@ -34,15 +42,9 @@
  <input type="number" name="price" id="price" step="0.01" required>
 </div>
 <!-- exported country -->
-<div class="form-control">
- <label for="name">Import country</label>
- <input type="text" name="country" id="country" required>
-</div>
+
 <!-- description -->
 <div class="form-control">
  <label for="description">Description</label>
  <textarea name="description" id="description" rows="5" required></textarea>
 </div>
-<button class="btn" type="submit">
-  Add
-</button>

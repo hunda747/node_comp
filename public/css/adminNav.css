@@ -28,6 +28,41 @@
  float: left;
 }
 
+.containe{
+ width: 1400px;
+}
+
+.containers .side{
+ margin: 1rem;
+ padding: 1rem;
+}
+
+.containers .side ul{
+ background-color: cadetblue;
+}
+
+
+
 .bottom-footer{
  background-color: #FFD700;
+}
+
+.bottom-footer{
+  /* position:absolute;
+  bottom:0;
+  width:100%; */
+  /* height:60px;   Height of the footer */
+  background-color: #f8b029e6;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.pie{
+ margin: 1.5rem;
+ padding: 1rem;
+}
+
+.pie #barChart{
+ width: 250px;
+ height: 250px;
 }
