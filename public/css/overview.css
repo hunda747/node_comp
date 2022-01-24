@@ -66,11 +66,16 @@
  align-items: center;
 }
 
+.topb{
+	border-top: 1px solid black;
+}
+
 .choice .view .btn{
  color: #f3f3f3;
 }
 
 .contact{
+ padding: 2rem;
  display: flex;
  justify-content: center;
 }
@@ -103,7 +108,7 @@
 	padding: 0.7rem;
 	border-radius: 5px;
 	align-items: center;
-	margin: 0 5rem;
+	margin: 0 2rem;
 }
 
 .contact .mess{

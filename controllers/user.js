@@ -53,7 +53,8 @@ exports.getExportPage = (req, res, next) => {
 }
 exports.getLogin = (req, res, next) => {
   res.render('admin/adminLogin', {
-    path: '/adminLogin'
+    path: '/adminLogin',
+    message: ''
   });
 }
 
