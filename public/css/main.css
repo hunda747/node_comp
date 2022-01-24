@@ -325,7 +325,7 @@ form {
 } */
 
 @media (min-width: 768px) {
-  .main-header__nav {
+  #main_nav {
     display: flex;
   }
 

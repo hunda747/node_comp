@@ -1,5 +1,11 @@
 const Request = require('../models/request');
+const Admin = require('../models/admin');
 const nodemailer = require("nodemailer");
+
+const crypto = require('crypto');
+const algorithm = 'aes-256-cbc';
+const key = crypto.randomBytes(32);
+const iv = crypto.randomBytes(16);
 
 exports.getLogin = (req, res, next) => {
   res.render('admin/adminLogin');
@@ -12,12 +18,36 @@ exports.getUser = async(req, res, next) => {
   console.log('user name'+ userName);
   console.log(password);
 
+  const hasing = 'roots';
+  const has = encrypt(hasing);
+  console.log(has.encryptedData);
+  const unhas = decrypt(has)
+  console.log(unhas);
+  const admi = new Admin('t@gmail.com', has);
+  admi.save();
+
+  const [result, matadata] = await Admin.fetchAll(userName);
+  // const pass = decrypt(result.password);
+  // console.log(pass);
+  // console.log(result);
+ if(result.length == 0){
+    res.render('admin/adminLogin', {message: "account doesn't exist"} )
+  }
+  else if(!password === result[0].password){
+    res.render('admin/adminLogin', {message: "invalid password"} )
+  }
+  else{
+    const request =await Request.fetchNew();
+    console.log(request[0]);
+    res.render('admin/request', {req: request[0]});
+  }
+
   if(userName==='root@gmail.com' && password==='root'){
     const request =await Request.fetchNew();
     console.log(request[0]);
     res.render('admin/request', {req: request[0]});
   }else{
-    res.redirect('/login')
+    // res.redirect('/login')
   }
 }
 
@@ -121,3 +151,20 @@ exports.getEmail = async (req, res, next) => {
   const request =await Request.fetchNew();
   res.render('admin/request', {req: request[0]});
 }
+
+function encrypt(text) {
+  let cipher = crypto.createCipheriv('aes-256-cbc', Buffer.from(key), iv);
+  let encrypted = cipher.update(text);
+  encrypted = Buffer.concat([encrypted, cipher.final()]);
+  return { iv: iv.toString('hex'), encryptedData: encrypted.toString('hex') };
+  // return encrypted.toString('hex');
+ }
+ 
+ function decrypt(text) {
+  let iv = Buffer.from(text.iv, 'hex');
+  let encryptedText = Buffer.from(text.encryptedData, 'hex');
+  let decipher = crypto.createDecipheriv('aes-256-cbc', Buffer.from(key), iv);
+  let decrypted = decipher.update(encryptedText);
+  decrypted = Buffer.concat([decrypted, decipher.final()]);
+  return decrypted.toString();
+ }
